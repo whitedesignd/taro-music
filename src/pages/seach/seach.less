@@ -1,0 +1,211 @@
+.seach{ 
+    overflow: hidden;
+    background-color:rgba(255, 255, 255, 0.418);
+    .seach-input{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #fff;
+        padding: 2vh 7vw;
+        position: fixed;
+        z-index: 999;
+        top:0;
+        input{
+            width: 80%;
+            border-bottom:  1px solid rgba(0,0,0,0.7);
+            font-size: 35rpx;
+            padding: 1rpx;
+        }
+        .icon{
+            display: flex;
+            font-size: 30rpx;
+            align-items: center;
+            padding: 0 0 0 3vw;
+        }
+        .icon-hover{
+            color:#000!important;
+        }
+        .data-list{
+            position: absolute;
+            top: 7vh;
+            left: 4vw;
+            z-index: 999;
+            background-color: #fdfdfd;
+            font-size: 35rpx;
+            width: 65vw;
+            .option{
+                display: block; 
+                text-align: left;
+                border: 0.5rpx solid rgba(0,0,0,0.1);
+                view{
+                    
+                }
+            }
+            
+        }
+    }
+    .content{
+        padding-top: 7vh;
+        .recording{
+            padding: 5vh 6vw 0 6vw;
+            .title{
+                display: flex;
+                justify-content: space-between;
+                > text{
+                    font-size: 35rpx;
+                }
+                .icon{
+                    color:#9c9c9c9f;
+                }
+                .icon-hover{
+                    color:#000;
+                }
+            }
+            .seach-tag{
+                margin: 4vh 0;
+                font-size: 40rpx;
+                white-space: nowrap;
+               
+                view{
+                    font-size: 38rpx;
+                    display: inline-block;
+                    // height: 5vh;
+                    margin: 0 2vw;
+                    padding: 0.5vh 3vh;
+                    border-radius: 50rpx ;
+                    background-color:#c2bdbd7a;
+                    &:nth-child(1){
+                        margin-left: 0;
+                    }
+                }
+               
+                .tag-hover{
+                    background-color: #afaaaa3f;
+                }
+            }
+        }
+        .modal{
+            width: 80%;
+            height: 20vh;
+            padding: 3vh 5vw;
+            box-sizing: border-box;
+            border-radius: 20rpx;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-55%);
+            background-color: #fff;
+            .title{
+                letter-spacing: 3rpx;
+                font-size: 33rpx;
+                padding-bottom: 4vh;
+                color:#5c5c5c;
+            }
+            .res{
+                display: flex;
+                justify-content: flex-end;
+                text{
+                    font-size: 30rpx;
+                    padding: 2vh 5vw;
+                    color: red;
+                }
+            }
+        }
+        .hot-title{
+            padding: 5vh 0 2vh 6vw;
+            font-size: 35rpx;
+            font-weight: 500;
+        }
+        .hot-list{
+            height: auto;
+            .hot-item{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 1vh 0;
+                width: 100%;
+                height: 10vh;
+                // box-sizing: border-box;
+                font-size: 30rpx;
+                overflow: hidden;
+                .rank{
+                    display: flex;
+                    width: 15%;
+                    padding-left: 2%;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    font-size: 35rpx;
+                }
+                &:nth-child(1),&:nth-child(2),&:nth-child(3){
+                    .rank{
+                        color: red;
+                        opacity: 1;
+                    }
+                }
+                .song{
+                    flex-direction: column;
+                    padding-left: 2%;
+                    width: 55%;
+                    .song-name{
+                        display: flex;
+                        flex-direction: row;
+                        view{
+                            font-weight: 500;
+                            padding-right: 2vw;
+                            padding-bottom: 1vh;
+                            font-size: 35rpx;
+                            overflow:hidden; //超出的文本隐藏
+                            text-overflow:ellipsis; //溢出用省略号显示
+                            white-space:nowrap; //溢出不换行
+                        }
+                        
+                    }
+                    .song-introduction{
+                        font-size: 30rpx;
+                    }
+                }
+                .song-score{
+                    flex:1;
+                    font-size: 25rpx;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding-right: 6vw;
+                }
+                &::after{ 
+                    content: '';
+                    clear: both;
+    
+                    display: none;
+                    width: 1vw;
+                    height: 13vh;
+                    border-radius: 60rpx;
+                    text-align: center;
+                    
+                    position: absolute;
+                    left: 50%;
+                    z-index: -999;
+                    animation: hot 0.2s linear forwards;
+                }
+                &:active::after{     
+                    display: inline-block;
+                  
+                }
+            }
+        }
+    }
+    @keyframes hot{
+        from{
+            width: 1%;
+            background-color: rgba(228, 228, 228, 0.144);
+        }
+        to{
+            width: 150%;
+            left:-20%;
+            background-color: rgba(221, 220, 220, 0.8);
+        }
+    }
+}
+   

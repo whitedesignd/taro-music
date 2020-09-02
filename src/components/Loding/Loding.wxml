@@ -1,0 +1,7 @@
+<view class="loding">
+    <view class='item'></view>
+    <view class='item'></view>
+    <view class='item'></view>
+    <view class='item'></view>
+    <view class='title'>努力加载中...</view>
+</view>
