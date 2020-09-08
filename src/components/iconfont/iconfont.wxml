@@ -1,0 +1,10 @@
+<view class='icon-font'>
+    <view class='aliyun-icon' style='{{styles}}'>
+        <image lazy-load 
+            class="iconfont {{iconClass}} font"    
+            style='{{iconStyle}}' 
+            bind:tap='hangClick'
+        ></image>
+    </view>
+    <slot></slot>
+</view>

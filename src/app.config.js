@@ -5,8 +5,8 @@ export default {
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: 'red',
-    navigationBarTitleText: '',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: '云音乐',
     navigationBarTextStyle: 'black'
   }
 }

@@ -7,7 +7,7 @@
 .item{
     display: inline-block;
     width: 5rpx;
-    height: 20rpx;
+    height: 18rpx;
     margin: 0 5rpx;
     border-radius: 4rpx;
     background-color:red;

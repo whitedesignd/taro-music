@@ -1,19 +1,162 @@
+.click-hover(){
+    &::after{
+        content: '';
+        clear: both;
+        display: none;
+        position: absolute;
+        z-index: -999;
+        left: 40%;
+        top: 25%;
+        width:1vw;
+        height:1vw;
+        padding: 1vw;
+        background-color: rgba(65, 65, 65, 0.89);
+        border-radius: 100%;
+        animation: hovertabbar 0.1s linear forwards;
+    }
+    &:active::after{
+        display: block;
+    }
+}
+@keyframes hovertabbar{
+    from{
+        display: block;
+        width: 1vw;
+        height: 1vw;
+        left: 40%;
+        top: 25%;
+        background-color:rgba(65, 65, 65, 0.89);;
+    }
+    to{
+        display: none;
+        width:12.5vw;
+        height:12.5vw;
+        left: 4%;
+        top: -77%;
+        background-color: rgba(65, 65, 65, 0.212);
+        
+    }
+
+}
 .index{
+    height: 100%;
+    padding: 0 6vw;
     .at-search-bar__action{
         display: none;
     }  
     .header{
         display: flex;
         justify-content: space-between;
-        padding:1vh 6vw;
-        text{
-            width: 33vw;
-            &:last-child{
-                text-align: right;
-            }
-            &:nth-child(2){
+        padding:3vh 0;
+        .header-tabar{
+            flex:1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            view{
+                position: relative;
+                z-index: 100;
+                padding: 0vh 4vw;
                 text-align: center;
+                color: rgb(109, 107, 107);
+                .click-hover();
             }
+            .tabbar-selected{
+                
+                color: #000;
+                font-weight: 650;
+                
+            }
+        }
+    }
+    .swiper{
+        swiper-item{
+            image{
+                width: 100%;
+                height: 100%;
+               
+            }
+        }
+        
+    }
+    .icon{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2.5vh;;
+    }
+    .personalized{
+        padding-top: 2vh;
+        .title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20rpx;
+            .order-0{
+                font-size: 30rpx;
+                font-weight: bold;
+            }
+            .order-1{
+                display: flex;
+                align-items: center;
+                view{
+                    font-size: 27rpx;
+                    color: rgb(143, 143, 143);
+                }
+                
+            }
+        }
+        scroll-view{
+            white-space: nowrap;
+            .song-list-item{
+                position: relative;
+                display: inline-block;
+                width: 180rpx;
+                height: 280rpx;
+                white-space: pre-wrap;
+                margin-right: 30rpx;
+                .content{
+                    display: flex;
+                    flex-direction: column;
+                    image{
+                        width: 180rpx;
+                        height: 180rpx;
+                        border-radius: 15rpx;
+                    }
+                    text{
+                        font-size:25rpx;
+                        font-weight: 540;
+                        padding-top: 10rpx;
+                        overflow:hidden; 
+
+                        text-overflow:ellipsis;
+
+                        display:-webkit-box; 
+
+                        -webkit-box-orient:vertical;
+
+                        -webkit-line-clamp:2; 
+                    }
+                }
+                
+                .play-volume{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    right: 10rpx;
+                    top:5rpx;
+                    color: #fff;
+                    text{
+                        font-size:20rpx;
+                    }
+                    
+                }
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+           
         }
     }
 }
